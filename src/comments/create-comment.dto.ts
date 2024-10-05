@@ -1,4 +1,4 @@
-import { IsEmail, IsNotEmpty, IsOptional, IsString, MaxLength } from 'class-validator';
+import {IsEmail, IsNotEmpty, IsNumber, IsOptional, IsString, MaxLength} from 'class-validator';
 
 export class CreateCommentDto {
     @IsNotEmpty()
@@ -18,4 +18,8 @@ export class CreateCommentDto {
     @IsString()
     @MaxLength(500)
     text: string;
+
+    @IsOptional()
+    @IsNumber()
+    parentCommentId?: number;
 }

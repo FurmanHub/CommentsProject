@@ -11,6 +11,12 @@ async function bootstrap() {
     transform: true,
   }));
 
+  app.enableCors({
+    origin: 'http://localhost:4200', // Разрешаем запросы с фронтенда (Angular)
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Разрешенные методы
+    credentials: true, // Если требуется использование сессий или кук
+  });
+
   await app.listen(3000);
 }
 bootstrap();
