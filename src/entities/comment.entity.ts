@@ -20,4 +20,6 @@ export class Comment {
     @CreateDateColumn({ type: 'timestamp with time zone' })
     createdAt: Date;
 
+    @Column( { nullable: true })
+    parentCommentId: number;
 }
